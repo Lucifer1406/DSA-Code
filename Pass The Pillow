@@ -1,0 +1,8 @@
+class Solution:
+    def passThePillow(self, n: int, time: int) -> int:
+        # Calculate the number of complete rounds 'k' and the remainder 'mod'
+        k, mod = divmod(time, n - 1)
+      
+        # If 'k' is even, the direction is towards the end, and the position is 'mod + 1'
+        # If 'k' is odd, the direction is towards the start, and the position is 'n - mod'
+        return n - mod if k & 1 else mod+1
