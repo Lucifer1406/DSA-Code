@@ -1,0 +1,10 @@
+class Solution:
+    def arrayRankTransform(self, arr: List[int]) -> List[int]:
+        # Sort the array to get unique values in order
+        sorted_arr = sorted(set(arr))
+        
+        # Create a dictionary mapping values to ranks
+        rank_map = {val: rank for rank, val in enumerate(sorted_arr, 1)}
+        
+        # Transform the original array using the rank map
+        return [rank_map[val] for val in arr]
