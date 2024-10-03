@@ -1,0 +1,18 @@
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        dit={}
+        for ele in arr:
+            if ele in dit:
+                dit[ele]+=1
+            else:
+                dit[ele]=1
+
+        values=list(dit.values())
+        count={}
+        for val in values:
+            if val in count:
+                return False
+            count[val]=1
+        return True
+
+        
