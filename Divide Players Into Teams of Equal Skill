@@ -1,0 +1,9 @@
+class Solution:
+    def dividePlayers(self, s: List[int]) -> int:
+        a=0
+        va=2*sum(s)//len(s)
+        f=Counter(s)
+        for i,(k,v) in enumerate(f.items()):
+            if v!=f[va-k]:return -1
+            a+=k*(va-k)*v
+        return a//2
